@@ -1,0 +1,38 @@
+<p>listing-form works!</p>
+<form [formGroup]="listing-form" (ngSubmit)="onSubmit()">
+    <div>
+        <label>ID</label>
+        <input type="text" formControlName="" placeholder="Enter id">
+        <div *ngIf="listing-form.get('id')?.['invalid'] && (listing-form.get('id')?.['dirty'] || listing-form.get('id')?.['touched'])">
+            <small *ngIf="listing-form.get('id')?.errors?.['required']">ID is required</small>
+        </div>
+    </div>
+    <div>
+        <label>Title</label>
+        <input type="text" formControlName="title" placeholder="Enter the title">
+        <div *ngIf="listing-form.get('title')?.['invalid'] && (listing-form.get('title')?.['dirty'] || listing-form.get('title')?.['touched'])">
+            <small *ngIf="listing-form.get('title')?.errors?.['required']">Title is required</small>
+        </div>
+    </div>
+    <div>
+        <label>Agent</label>
+        <input type="text" formControlName="agent" placeholder="Enter agent">
+        <div *ngIf="listing-form.get('agent')?.['invalid'] && (listing-form.get('agent')?.['dirty'] || listing-form.get('agent')?.['touched'])">
+            <small *ngIf="listing-form.get('agent')?.errors?.['required']">Agent is required</small>
+        </div>
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" formControlName="description" placeholder="Enter description">
+        <div *ngIf="listing-form.get('description')?.['invalid'] && (listing-form.get('description')?.['dirty'] || listing-form.get('description')?.['touched'])">
+            <small *ngIf="listing-form.get('description')?.errors?.['required']">Agent is required</small>
+        </div>
+    </div>
+    <div>
+        <label>Area</label>
+        <input type="text" formControlName="area" placeholder="Enter area">
+        <div *ngIf="listing-form.get('area')?.['invalid'] && (listing-form.get('area')?.['dirty'] || listing-form.get('area')?.['touched'])">
+            <small *ngIf="listing-form.get('area')?.errors?.['required']">area is required</small>
+        </div>
+    </div>
+</form>
