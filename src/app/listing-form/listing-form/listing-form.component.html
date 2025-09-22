@@ -1,38 +1,55 @@
 <p>listing-form works!</p>
-<form [formGroup]="listing-form" (ngSubmit)="onSubmit()">
-    <div>
-        <label>ID</label>
-        <input type="text" formControlName="" placeholder="Enter id">
-        <div *ngIf="listing-form.get('id')?.['invalid'] && (listing-form.get('id')?.['dirty'] || listing-form.get('id')?.['touched'])">
-            <small *ngIf="listing-form.get('id')?.errors?.['required']">ID is required</small>
-        </div>
-    </div>
+<form [formGroup]="listingForm" (ngSubmit)="onSubmit()">
     <div>
         <label>Title</label>
         <input type="text" formControlName="title" placeholder="Enter the title">
-        <div *ngIf="listing-form.get('title')?.['invalid'] && (listing-form.get('title')?.['dirty'] || listing-form.get('title')?.['touched'])">
-            <small *ngIf="listing-form.get('title')?.errors?.['required']">Title is required</small>
+        <div *ngIf="listingForm.get('title')?.['invalid'] && (listingForm.get('title')?.['dirty'] || listingForm.get('title')?.['touched'])">
+            <small *ngIf="listingForm.get('title')?.errors?.['required']">Title is required</small>
         </div>
     </div>
     <div>
         <label>Agent</label>
         <input type="text" formControlName="agent" placeholder="Enter agent">
-        <div *ngIf="listing-form.get('agent')?.['invalid'] && (listing-form.get('agent')?.['dirty'] || listing-form.get('agent')?.['touched'])">
-            <small *ngIf="listing-form.get('agent')?.errors?.['required']">Agent is required</small>
+        <div *ngIf="listingForm.get('agent')?.['invalid'] && (listingForm.get('agent')?.['dirty'] || listingForm.get('agent')?.['touched'])">
+            <small *ngIf="listingForm.get('agent')?.errors?.['required']">Agent is required</small>
         </div>
     </div>
     <div>
         <label>Description</label>
         <input type="text" formControlName="description" placeholder="Enter description">
-        <div *ngIf="listing-form.get('description')?.['invalid'] && (listing-form.get('description')?.['dirty'] || listing-form.get('description')?.['touched'])">
-            <small *ngIf="listing-form.get('description')?.errors?.['required']">Agent is required</small>
+        <div *ngIf="listingForm.get('description')?.['invalid'] && (listingForm.get('description')?.['dirty'] || listingForm.get('description')?.['touched'])">
+            <small *ngIf="listingForm.get('description')?.errors?.['required']">Agent is required</small>
         </div>
     </div>
     <div>
         <label>Area</label>
         <input type="text" formControlName="area" placeholder="Enter area">
-        <div *ngIf="listing-form.get('area')?.['invalid'] && (listing-form.get('area')?.['dirty'] || listing-form.get('area')?.['touched'])">
-            <small *ngIf="listing-form.get('area')?.errors?.['required']">area is required</small>
+        <div *ngIf="listingForm.get('area')?.['invalid'] && (listingForm.get('area')?.['dirty'] || listingForm.get('area')?.['touched'])">
+            <small *ngIf="listingForm.get('area')?.errors?.['required']">area is required</small>
         </div>
     </div>
+    <div>
+        <label>Property Type</label>
+        <input type="text" formControlName="propertyType" placeholder="Enter Property Type">
+        <div *ngIf="listingForm.get('propertyType')?.['invalid'] && (listingForm.get('propertyType')?.['dirty'] || listingForm.get('propertyType')?.['touched'])">
+            <small *ngIf="listingForm.get('propertyType')?.errors?.['required']">Property Type is required</small>
+        </div>
+    </div>
+    <div>
+        <label>User Rating</label>
+        <input type="text" formControlName="userRating" placeholder="Enter User Rating">
+        <div *ngIf="listingForm.get('userRating')?.['invalid'] && (listingForm.get('userRating')?.['dirty'] || listingForm.get('userRating')?.['touched'])">
+            <small *ngIf="listingForm.get('userRating')?.errors?.['required']">User Rating is required</small>
+        </div>
+    </div>
+    <div>
+        <label>Inquiry Count</label>
+        <input type="text" formControlName="inquiryCount" placeholder="Enter Inquiry Count">
+        <div *ngIf="listingForm.get('inquiryCount')?.['invalid'] && (listingForm.get('inquiryCount')?.['dirty'] || listingForm.get('inquiryCount')?.['touched'])">
+            <small *ngIf="listingForm.get('inquiryCount')?.errors?.['required']">Inquiry Count is required</small>
+        </div>
+    </div>
+    <input type="submit" value="Register" [disabled]="listingForm.invalid">
+    <p *ngIf="showAlert">Success!!!</p>
+    <button *ngIf="showAlert" (click)="closeAlert()">Close</button>
 </form>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ListingService } from 'src/app/services/listing.service';
 
@@ -7,13 +7,14 @@ import { ListingService } from 'src/app/services/listing.service';
   templateUrl: './listing-form.component.html',
   styleUrls: ['./listing-form.component.css']
 })
-export class ListingFormComponent {
+export class ListingFormComponent implements OnInit {
   listingForm!:FormGroup;
   successMessage!:string;
   showAlert!:boolean
   constructor(private fb:FormBuilder,private scall:ListingService){
-    this.listingForm = fb.group({
-      id:[,[Validators.required]],
+  }
+  ngOnInit(): void {
+    this.listingForm = this.fb.group({
       title:["",[Validators.required]],
       agent:["",[Validators.required]],
       description:["",[Validators.required]],
@@ -24,16 +25,18 @@ export class ListingFormComponent {
     })
   }
 
+
+
   onSubmit():void{
     if(this.listingForm.valid){
       this.scall.addListing(this.listingForm.value).subscribe((data)=>{
-        alert("Success");
+        this.showAlert=true;
         this.listingForm.reset();
       })
     }
   }
 
   closeAlert(){
-    
+    this.showAlert=false;
   }
 }

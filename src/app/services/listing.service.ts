@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ListingService {
-  apiUrl:string="";
+  apiUrl:string="https://ec2-15-206-172-156.projects.wecreateproblems.com/proxy/8000/listings";
   constructor(private http:HttpClient) { }
 
   addListing(listing:Listing):Observable<any>{

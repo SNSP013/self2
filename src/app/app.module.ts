@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FilterPipe } from './services/filter.pipe';
 import { ListingFormComponent } from './listing-form/listing-form/listing-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListingListComponent } from './listing-list/listing-list/listing-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
-    ListingFormComponent
+    ListingFormComponent,
+    ListingListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+{
+  "listings": [
+    {
+      "id": "f669",
+      "title": "the",
+      "agent": "man",
+      "description": "company",
+      "area": "church gate",
+      "propertyType": "individual",
+      "userRating": "4",
+      "inquiryCount": "2"
+    },
+    {
+      "id": "e129",
+      "title": "hetik",
+      "agent": "mijhu",
+      "description": "fighyt",
+      "area": "jikoyr",
+      "propertyType": "ghost",
+      "userRating": "3.5",
+      "inquiryCount": "1"
+    },
+    {
+      "id": "b280",
+      "title": "you",
+      "agent": "are",
+      "description": "my",
+      "area": "fcuk",
+      "propertyType": "bent",
+      "userRating": "5.6",
+      "inquiryCount": "32"
+    }
+  ]
+}

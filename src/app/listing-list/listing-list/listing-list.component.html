@@ -1,0 +1,21 @@
+<p>listing-list works!</p>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Agent</th>
+        <th>Description</th>
+        <th>Area</th>
+        <th>Property Type</th>
+        <th>User Rating</th>
+        <th>Inquiry Count</th>
+    </tr>
+    <tr *ngFor="let l of listings | async">
+        <td>{{l.title}}</td>
+        <td>{{l.agent}}</td>
+        <td>{{l.description}}</td>
+        <td>{{l.area}}</td>
+        <td>{{l.propertyType}}</td>
+        <td>{{l.userRating}}</td>
+        <td>{{l.inquiryCount}}</td>
+    </tr>
+</table>
