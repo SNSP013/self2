@@ -49,7 +49,5 @@
             <small *ngIf="listingForm.get('inquiryCount')?.errors?.['required']">Inquiry Count is required</small>
         </div>
     </div>
-    <input type="submit" value="Register" [disabled]="listingForm.invalid">
-    <p *ngIf="showAlert">Success!!!</p>
-    <button *ngIf="showAlert" (click)="closeAlert()">Close</button>
+    <input type="submit" [value]="edit ? 'Update' : 'Register'" [disabled]="listingForm.invalid">
 </form>

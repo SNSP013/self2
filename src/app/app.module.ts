@@ -8,13 +8,15 @@ import { ListingFormComponent } from './listing-form/listing-form/listing-form.c
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListingListComponent } from './listing-list/listing-list/listing-list.component';
+import { ViewByIdComponent } from './view-by-id/view-by-id/view-by-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterPipe,
     ListingFormComponent,
-    ListingListComponent
+    ListingListComponent,
+    ViewByIdComponent
   ],
   imports: [
     BrowserModule,

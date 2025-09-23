@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ListingService {
-  apiUrl:string="https://ec2-15-206-172-156.projects.wecreateproblems.com/proxy/8000/listings";
+  apiUrl:string="https://ec2-65-2-39-213.projects.wecreateproblems.com/proxy/8000/listings";
   constructor(private http:HttpClient) { }
 
   addListing(listing:Listing):Observable<any>{
@@ -16,5 +16,17 @@ export class ListingService {
 
   getListings():Observable<any>{
     return this.http.get(this.apiUrl);
+  }
+
+  getById(id:string):Observable<any>{
+    return this.http.get(this.apiUrl+'/'+id);
+  }
+
+  updateListing(listing:Listing):Observable<any>{
+    return this.http.put(this.apiUrl,listing);
+  }
+
+  deleteListing(id:string):Observable<any>{
+    return this.http.delete(this.apiUrl+'/'+id);
   }
 }
